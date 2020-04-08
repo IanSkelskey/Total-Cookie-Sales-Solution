@@ -1,0 +1,11 @@
+E:\VB2017\Chap11\Total Cookie Sales Solution\Total Cookie Sales Project\bin\Debug\Total Cookie Sales Project.exe.config
+E:\VB2017\Chap11\Total Cookie Sales Solution\Total Cookie Sales Project\bin\Debug\Total Cookie Sales Project.exe
+E:\VB2017\Chap11\Total Cookie Sales Solution\Total Cookie Sales Project\bin\Debug\Total Cookie Sales Project.pdb
+E:\VB2017\Chap11\Total Cookie Sales Solution\Total Cookie Sales Project\bin\Debug\Total Cookie Sales Project.xml
+E:\VB2017\Chap11\Total Cookie Sales Solution\Total Cookie Sales Project\obj\Debug\Total Cookie Sales Project.vbprojResolveAssemblyReference.cache
+E:\VB2017\Chap11\Total Cookie Sales Solution\Total Cookie Sales Project\obj\Debug\Total_Cookie_Sales_Project.frmMain.resources
+E:\VB2017\Chap11\Total Cookie Sales Solution\Total Cookie Sales Project\obj\Debug\Total_Cookie_Sales_Project.Resources.resources
+E:\VB2017\Chap11\Total Cookie Sales Solution\Total Cookie Sales Project\obj\Debug\Total Cookie Sales Project.vbproj.GenerateResource.Cache
+E:\VB2017\Chap11\Total Cookie Sales Solution\Total Cookie Sales Project\obj\Debug\Total Cookie Sales Project.exe
+E:\VB2017\Chap11\Total Cookie Sales Solution\Total Cookie Sales Project\obj\Debug\Total Cookie Sales Project.xml
+E:\VB2017\Chap11\Total Cookie Sales Solution\Total Cookie Sales Project\obj\Debug\Total Cookie Sales Project.pdb
