@@ -23,7 +23,14 @@ Partial Class frmMain
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.WeekDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ChocolateChipDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.PeanutButterDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.PecanSandiesDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.SalesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.CookieSalesDataSet = New Total_Cookie_Sales_Project.CookieSalesDataSet()
         Me.btnCalc = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
@@ -33,18 +40,12 @@ Partial Class frmMain
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.btnExit = New System.Windows.Forms.Button()
-        Me.CookieSalesDataSet = New Total_Cookie_Sales_Project.CookieSalesDataSet()
-        Me.SalesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.SalesTableAdapter = New Total_Cookie_Sales_Project.CookieSalesDataSetTableAdapters.SalesTableAdapter()
         Me.TableAdapterManager = New Total_Cookie_Sales_Project.CookieSalesDataSetTableAdapters.TableAdapterManager()
-        Me.WeekDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ChocolateChipDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.PeanutButterDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.PecanSandiesDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.GroupBox1.SuspendLayout()
-        CType(Me.CookieSalesDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SalesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.CookieSalesDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
         'DataGridView1
@@ -56,12 +57,62 @@ Partial Class frmMain
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.WeekDataGridViewTextBoxColumn, Me.ChocolateChipDataGridViewTextBoxColumn, Me.PeanutButterDataGridViewTextBoxColumn, Me.PecanSandiesDataGridViewTextBoxColumn})
         Me.DataGridView1.DataSource = Me.SalesBindingSource
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DataGridView1.DefaultCellStyle = DataGridViewCellStyle1
         Me.DataGridView1.Location = New System.Drawing.Point(-2, -2)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.ReadOnly = True
         Me.DataGridView1.RowHeadersWidth = 82
         Me.DataGridView1.Size = New System.Drawing.Size(320, 172)
         Me.DataGridView1.TabIndex = 2
+        '
+        'WeekDataGridViewTextBoxColumn
+        '
+        Me.WeekDataGridViewTextBoxColumn.DataPropertyName = "Week"
+        Me.WeekDataGridViewTextBoxColumn.HeaderText = "Week"
+        Me.WeekDataGridViewTextBoxColumn.MinimumWidth = 10
+        Me.WeekDataGridViewTextBoxColumn.Name = "WeekDataGridViewTextBoxColumn"
+        Me.WeekDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'ChocolateChipDataGridViewTextBoxColumn
+        '
+        Me.ChocolateChipDataGridViewTextBoxColumn.DataPropertyName = "Chocolate Chip"
+        Me.ChocolateChipDataGridViewTextBoxColumn.HeaderText = "Chocolate Chip"
+        Me.ChocolateChipDataGridViewTextBoxColumn.MinimumWidth = 10
+        Me.ChocolateChipDataGridViewTextBoxColumn.Name = "ChocolateChipDataGridViewTextBoxColumn"
+        Me.ChocolateChipDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'PeanutButterDataGridViewTextBoxColumn
+        '
+        Me.PeanutButterDataGridViewTextBoxColumn.DataPropertyName = "Peanut Butter"
+        Me.PeanutButterDataGridViewTextBoxColumn.HeaderText = "Peanut Butter"
+        Me.PeanutButterDataGridViewTextBoxColumn.MinimumWidth = 10
+        Me.PeanutButterDataGridViewTextBoxColumn.Name = "PeanutButterDataGridViewTextBoxColumn"
+        Me.PeanutButterDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'PecanSandiesDataGridViewTextBoxColumn
+        '
+        Me.PecanSandiesDataGridViewTextBoxColumn.DataPropertyName = "Pecan Sandies"
+        Me.PecanSandiesDataGridViewTextBoxColumn.HeaderText = "Pecan Sandies"
+        Me.PecanSandiesDataGridViewTextBoxColumn.MinimumWidth = 10
+        Me.PecanSandiesDataGridViewTextBoxColumn.Name = "PecanSandiesDataGridViewTextBoxColumn"
+        Me.PecanSandiesDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'SalesBindingSource
+        '
+        Me.SalesBindingSource.DataMember = "Sales"
+        Me.SalesBindingSource.DataSource = Me.CookieSalesDataSet
+        '
+        'CookieSalesDataSet
+        '
+        Me.CookieSalesDataSet.DataSetName = "CookieSalesDataSet"
+        Me.CookieSalesDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'btnCalc
         '
@@ -147,16 +198,6 @@ Partial Class frmMain
         Me.btnExit.Text = "E&xit"
         Me.btnExit.UseVisualStyleBackColor = True
         '
-        'CookieSalesDataSet
-        '
-        Me.CookieSalesDataSet.DataSetName = "CookieSalesDataSet"
-        Me.CookieSalesDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'SalesBindingSource
-        '
-        Me.SalesBindingSource.DataMember = "Sales"
-        Me.SalesBindingSource.DataSource = Me.CookieSalesDataSet
-        '
         'SalesTableAdapter
         '
         Me.SalesTableAdapter.ClearBeforeFill = True
@@ -167,41 +208,9 @@ Partial Class frmMain
         Me.TableAdapterManager.SalesTableAdapter = Me.SalesTableAdapter
         Me.TableAdapterManager.UpdateOrder = Total_Cookie_Sales_Project.CookieSalesDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         '
-        'WeekDataGridViewTextBoxColumn
-        '
-        Me.WeekDataGridViewTextBoxColumn.DataPropertyName = "Week"
-        Me.WeekDataGridViewTextBoxColumn.HeaderText = "Week"
-        Me.WeekDataGridViewTextBoxColumn.MinimumWidth = 10
-        Me.WeekDataGridViewTextBoxColumn.Name = "WeekDataGridViewTextBoxColumn"
-        Me.WeekDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'ChocolateChipDataGridViewTextBoxColumn
-        '
-        Me.ChocolateChipDataGridViewTextBoxColumn.DataPropertyName = "Chocolate Chip"
-        Me.ChocolateChipDataGridViewTextBoxColumn.HeaderText = "Chocolate Chip"
-        Me.ChocolateChipDataGridViewTextBoxColumn.MinimumWidth = 10
-        Me.ChocolateChipDataGridViewTextBoxColumn.Name = "ChocolateChipDataGridViewTextBoxColumn"
-        Me.ChocolateChipDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'PeanutButterDataGridViewTextBoxColumn
-        '
-        Me.PeanutButterDataGridViewTextBoxColumn.DataPropertyName = "Peanut Butter"
-        Me.PeanutButterDataGridViewTextBoxColumn.HeaderText = "Peanut Butter"
-        Me.PeanutButterDataGridViewTextBoxColumn.MinimumWidth = 10
-        Me.PeanutButterDataGridViewTextBoxColumn.Name = "PeanutButterDataGridViewTextBoxColumn"
-        Me.PeanutButterDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'PecanSandiesDataGridViewTextBoxColumn
-        '
-        Me.PecanSandiesDataGridViewTextBoxColumn.DataPropertyName = "Pecan Sandies"
-        Me.PecanSandiesDataGridViewTextBoxColumn.HeaderText = "Pecan Sandies"
-        Me.PecanSandiesDataGridViewTextBoxColumn.MinimumWidth = 10
-        Me.PecanSandiesDataGridViewTextBoxColumn.Name = "PecanSandiesDataGridViewTextBoxColumn"
-        Me.PecanSandiesDataGridViewTextBoxColumn.ReadOnly = True
-        '
         'frmMain
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(13.0!, 32.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(317, 313)
         Me.Controls.Add(Me.btnExit)
@@ -214,9 +223,9 @@ Partial Class frmMain
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Cookie Sales"
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.GroupBox1.ResumeLayout(False)
-        CType(Me.CookieSalesDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.SalesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.CookieSalesDataSet, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupBox1.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub

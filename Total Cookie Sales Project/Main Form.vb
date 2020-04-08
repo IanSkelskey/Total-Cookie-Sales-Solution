@@ -16,4 +16,18 @@ Public Class frmMain
         Me.SalesTableAdapter.Fill(Me.CookieSalesDataSet.Sales)
 
     End Sub
+
+    Private Sub btnCalc_Click(sender As Object, e As EventArgs) Handles btnCalc.Click
+        Dim intChocolateTotal As Integer
+        Dim intPeanutTotal As Integer
+        Dim intPecanTotal As Integer
+        For Each row As CookieSalesDataSet.SalesRow In CookieSalesDataSet.Sales
+            intChocolateTotal += row.Chocolate_Chip
+            intPeanutTotal += row.Peanut_Butter
+            intPecanTotal += row.Pecan_Sandies
+        Next row
+        lblChocolate.Text = intChocolateTotal.ToString
+        lblPeanut.Text = intPecanTotal.ToString
+        lblPecan.Text = intPecanTotal.ToString
+    End Sub
 End Class
